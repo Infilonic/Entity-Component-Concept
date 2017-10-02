@@ -18,7 +18,6 @@ namespace EntityComponentSystem
             var entity = entityManager.CreateEntity();
 
             entity.AddComponent(new HealthComponent(0, 10));
-            var cc = new ComponentContainer<HealthComponent>();
         }
     }
 }
