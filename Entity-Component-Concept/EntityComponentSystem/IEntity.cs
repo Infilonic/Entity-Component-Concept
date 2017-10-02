@@ -8,7 +8,7 @@ namespace EntityComponentSystem.Base
 
     public interface IEntity
     {
-        void AddComponent(IComponent component, uint allowedComponentCount = 1);
+        void AddComponent(IComponent component);
 
         void RemoveComponent(IComponent component);
 
