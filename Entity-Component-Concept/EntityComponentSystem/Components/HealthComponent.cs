@@ -1,4 +1,6 @@
-﻿namespace EntityComponentSystem.Components
+﻿using EntityComponentSystem.Base;
+
+namespace EntityComponentSystem.Components
 {
     class HealthComponent : BaseComponent
     {
@@ -9,6 +11,11 @@
             this.maxHealth = maxHealth;
         }
 
-
-    }
+		public override bool ConstraintReached(IEntity constraintEntity) {
+			if(constraintEntity.HasComponent(this)) {
+				return true;
+			}
+			return false;
+		}
+	}
 }

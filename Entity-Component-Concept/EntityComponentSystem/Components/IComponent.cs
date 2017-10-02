@@ -12,5 +12,7 @@ namespace EntityComponentSystem.Components
         void Subscribe(IComponentSystem system);
 
         void Unsubscribe(IComponentSystem system);
+
+		bool ConstraintReached(IEntity constrainedEntity);
     }
 }

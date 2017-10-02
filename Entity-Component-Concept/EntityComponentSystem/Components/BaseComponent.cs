@@ -21,5 +21,7 @@ namespace EntityComponentSystem.Components
         public void Unsubscribe(IComponentSystem system) {
             base.Detach(system);
         }
+
+		public abstract bool ConstraintReached(IEntity constrainedEntity);
     }
 }
