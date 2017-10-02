@@ -43,6 +43,7 @@
     <Compile Include="EntityComponentSystem\Components\HealthComponent.cs" />
     <Compile Include="EntityComponentSystem\Components\IComponent.cs" />
     <Compile Include="EntityComponentSystem\EntityManager.cs" />
+    <Compile Include="EntityComponentSystem\Exceptions\ComponentConstraintReachedException.cs" />
     <Compile Include="EntityComponentSystem\Exceptions\ComponentNotFoundException.cs" />
     <Compile Include="EntityComponentSystem\Exceptions\EntityNotFoundException.cs" />
     <Compile Include="EntityComponentSystem\Exceptions\SystemNotFoundException.cs" />
