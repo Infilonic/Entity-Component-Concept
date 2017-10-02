@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using EntityComponentSystem.Components;
+using EntityComponentSystem.Exceptions;
 
 namespace EntityComponentSystem.Base
 {
@@ -11,7 +12,7 @@ namespace EntityComponentSystem.Base
     public abstract class BaseEntity : IEntity
     {
         protected uint id;
-        protected Dictionary<Type, IComponent> componentMap;
+        protected Dictionary<Type, IComponent> componentMap; //Needs to be a derivate for custom Exceptions
 
         protected BaseEntity(uint id) {
             this.id = id;
@@ -19,8 +20,10 @@ namespace EntityComponentSystem.Base
         }
 
         public void AddComponent(IComponent component) {
-            if(!component.ConstraintReached(this)) {
+			try {
 				this.componentMap.Add(component.GetType(), component);
+			} catch(ComponentConstraintReachedException ccre) {
+				//Logger stuff. Print out the component-type and the constraint information.
 			}
         }
 
