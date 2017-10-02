@@ -1,4 +1,5 @@
 ﻿using EntityComponentSystem.Components;
+using System;
 
 namespace EntityComponentSystem.Base
 {
@@ -13,5 +14,7 @@ namespace EntityComponentSystem.Base
         void RemoveComponent(IComponent component);
 
         bool HasComponent(IComponent component);
+
+		IComponent[] GetComponentsOfType(Type componentType);
     }
 }

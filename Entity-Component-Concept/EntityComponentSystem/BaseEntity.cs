@@ -32,6 +32,16 @@ namespace EntityComponentSystem.Base
             return (this.componentMap.ContainsKey(component.GetType()));
         }
 
+		public IComponent[] GetComponentsOfType(Type componentType) {
+			List<IComponent> cl = new List<IComponent>();
+			foreach(var component in this.componentMap) {
+				if(component.GetType() == componentType) {
+					cl.Add(component.Value);
+				}
+			}
+			return cl.ToArray();
+		}
+
         public uint ID {
             get { return this.id; }
         }
