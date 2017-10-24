@@ -16,13 +16,14 @@ namespace EntityComponentSystem.Base
         private EntityManager() {
             this.entityList = new Dictionary<uint, Entity>();
             this.index = 0;
+			EntityManager.instance = this;
         }
 
         public static EntityManager GetManager()
         {
             if (EntityManager.instance == null)
             {
-                EntityManager.instance = new EntityManager();
+				new EntityManager();
             }
 
             return EntityManager.instance;
