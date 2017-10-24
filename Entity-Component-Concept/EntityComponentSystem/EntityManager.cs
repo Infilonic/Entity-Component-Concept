@@ -10,11 +10,11 @@ namespace EntityComponentSystem.Base
     class EntityManager
     {
         private static EntityManager instance;
-        private Dictionary<uint, IEntity> entityList;
+        private Dictionary<uint, Entity> entityList;
         private uint index;
 
         private EntityManager() {
-            this.entityList = new Dictionary<uint, IEntity>();
+            this.entityList = new Dictionary<uint, Entity>();
             this.index = 0;
         }
 
@@ -28,7 +28,7 @@ namespace EntityComponentSystem.Base
             return EntityManager.instance;
         }
 
-        public IEntity CreateEntity() {
+        public Entity CreateEntity() {
             var entity = new GeneralEntity(this.index);
             this.entityList.Add(this.index++, entity);
             return entity;
@@ -38,15 +38,15 @@ namespace EntityComponentSystem.Base
             this.entityList.Remove(id);
         }
 
-        public IEntity GetEntityByID(uint id)
+        public Entity GetEntityByID(uint id)
         {
             return this.entityList[id];
         }
 
-        public IEntity[] GetEntitiesByComponent(IComponent component)
+        public Entity[] GetEntitiesByComponent(Component component)
         {
-            var entities = new List<IEntity>();
-            foreach(KeyValuePair<uint, IEntity> eP in this.entityList)
+            var entities = new List<Entity>();
+            foreach(KeyValuePair<uint, Entity> eP in this.entityList)
             {
                 if(eP.Value.HasComponent(component)) {
                     entities.Add(eP.Value);

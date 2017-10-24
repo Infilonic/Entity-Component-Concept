@@ -11,7 +11,7 @@ namespace EntityComponentSystem.Components
             this.maxHealth = maxHealth;
         }
 
-		public override bool ConstraintReached(IEntity constraintEntity) {
+		public override bool ConstraintReached(Entity constraintEntity) {
 			if(constraintEntity.HasComponent(this)) {
 				return true;
 			}

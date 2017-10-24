@@ -11,7 +11,7 @@ namespace EntityComponentSystem.Systems
 {
     class HealthSystem : BaseComponentSystem
     {
-        public override void Update(IMessage message)
+        public override void Update(Message message)
         {
             throw new NotImplementedException();
         }

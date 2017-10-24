@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace EntityComponentSystem.Components
 {
     public class ComponentContainer<T>
-        where T : IComponent
+        where T : Component
     {
         private uint index;
         private uint allowedComponentCount;
@@ -35,14 +35,14 @@ namespace EntityComponentSystem.Components
             this.componentMap.Clear();
         }
 
-        public IComponent GetComponentByID(uint id)
+        public Component GetComponentByID(uint id)
         {
             return this.componentMap[id];
         }
 
-        public IComponent[] GetAllComponents()
+        public Component[] GetAllComponents()
         {
-            var components = new IComponent[this.allowedComponentCount];
+            var components = new Component[this.allowedComponentCount];
             for(uint i = 0; i < this.componentMap.Count; i++) {
                 components[i] = this.GetComponentByID(i);
             }

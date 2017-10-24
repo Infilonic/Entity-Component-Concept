@@ -9,20 +9,20 @@ using EntityComponentSystem.Systems;
 
 namespace EntityComponentSystem.MessageChannels.Messages
 {
-    class BaseMessage : IMessage
+    class BaseMessage : Message
     {
-        private IEntity entity;
+        private Entity entity;
 
-        public void SetComponent(IComponent component)
+        public void SetComponent(Component component)
         {
             throw new NotImplementedException();
         }
 
-        public void SetEntity(IEntity entity) {
+        public void SetEntity(Entity entity) {
             throw new NotImplementedException();
         }
 
-        public void SetSystem(IComponentSystem system)
+        public void SetSystem(ComponentSystem system)
         {
             throw new NotImplementedException();
         }

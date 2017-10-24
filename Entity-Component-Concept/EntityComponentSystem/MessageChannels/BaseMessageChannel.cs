@@ -9,22 +9,22 @@ using EntityComponentSystem.MessageChannels.Messages;
 
 namespace EntityComponentSystem.MessageChannels
 {
-    public abstract class BaseMessageChannel : BaseObservable, IMessageChannel
+    public abstract class BaseMessageChannel : BaseObservable, MessageChannel
     {
-        protected Dictionary<Type, IComponentSystem> componentSystemMap;
+        protected Dictionary<Type, ComponentSystem> componentSystemMap;
 
-        public void SendMessage(IComponentSystem system, IMessage message)
+        public void SendMessage(ComponentSystem system, Message message)
         {
             this.componentSystemMap[system.GetType()].Update(message);
         }
 
-        public void Subscribe(IComponentSystem system)
+        public void Subscribe(ComponentSystem system)
         {
             base.Attach(system);
             this.componentSystemMap.Add(system.GetType(), system);
         }
 
-        public void Unsubscribe(IComponentSystem system)
+        public void Unsubscribe(ComponentSystem system)
         {
             base.Detach(system);
             this.componentSystemMap.Remove(system.GetType());

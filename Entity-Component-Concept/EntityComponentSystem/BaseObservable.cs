@@ -6,24 +6,24 @@ namespace EntityComponentSystem.Base
      * Use this class for all of your observables
      */
 
-    public abstract class BaseObservable : IObservable
+    public abstract class BaseObservable : Observable
     {
-        protected List<IObserver> observerList;
+        protected List<Observer> observerList;
 
         protected BaseObservable() {
-            this.observerList = new List<IObserver>();
+            this.observerList = new List<Observer>();
         }
 
-        public void Attach(IObserver observer) {
+        public void Attach(Observer observer) {
             this.observerList.Add(observer);
         }
 
-        public void Detach(IObserver observer) {
+        public void Detach(Observer observer) {
             this.observerList.Remove(observer);
         }
 
         public void Notify() {
-            foreach(IObserver o in this.observerList) {
+            foreach(Observer o in this.observerList) {
                 o.Update();
             }
         }

@@ -41,7 +41,7 @@
     <Compile Include="EntityComponentSystem\BaseObserver.cs" />
     <Compile Include="EntityComponentSystem\Components\ComponentContainer.cs" />
     <Compile Include="EntityComponentSystem\Components\HealthComponent.cs" />
-    <Compile Include="EntityComponentSystem\Components\IComponent.cs" />
+    <Compile Include="EntityComponentSystem\Components\Component.cs" />
     <Compile Include="EntityComponentSystem\EntityManager.cs" />
     <Compile Include="EntityComponentSystem\Exceptions\ComponentConstraintReachedException.cs" />
     <Compile Include="EntityComponentSystem\Exceptions\ComponentNotFoundException.cs" />
@@ -50,15 +50,15 @@
     <Compile Include="EntityComponentSystem\GeneralEntity.cs" />
     <Compile Include="EntityComponentSystem\MessageChannels\BaseMessageChannel.cs" />
     <Compile Include="EntityComponentSystem\MessageChannels\Messages\BaseMessage.cs" />
-    <Compile Include="EntityComponentSystem\MessageChannels\Messages\IMessage.cs" />
-    <Compile Include="EntityComponentSystem\MessageChannels\IMessageChannel.cs" />
+    <Compile Include="EntityComponentSystem\MessageChannels\Messages\Message.cs" />
+    <Compile Include="EntityComponentSystem\MessageChannels\MessageChannel.cs" />
     <Compile Include="EntityComponentSystem\Systems\BaseComponentSystem.cs" />
     <Compile Include="EntityComponentSystem\Components\BaseComponent.cs" />
-    <Compile Include="EntityComponentSystem\IEntity.cs" />
-    <Compile Include="EntityComponentSystem\IObservable.cs" />
-    <Compile Include="EntityComponentSystem\IObserver.cs" />
+    <Compile Include="EntityComponentSystem\Entity.cs" />
+    <Compile Include="EntityComponentSystem\Observable.cs" />
+    <Compile Include="EntityComponentSystem\Observer.cs" />
     <Compile Include="EntityComponentSystem\Systems\HealthSystem.cs" />
-    <Compile Include="EntityComponentSystem\Systems\IComponentSystem.cs" />
+    <Compile Include="EntityComponentSystem\Systems\ComponentSystem.cs" />
     <Compile Include="TestImplementation.cs" />
   </ItemGroup>
   <ItemGroup>

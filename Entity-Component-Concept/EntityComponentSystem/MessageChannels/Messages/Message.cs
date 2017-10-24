@@ -10,11 +10,11 @@ using EntityComponentSystem.Systems;
 
 namespace EntityComponentSystem.MessageChannels.Messages
 {
-    public interface IMessage
+    public interface Message
     {
-        void SetSystem(IComponentSystem system);
-        void SetComponent(IComponent component);
+        void SetSystem(ComponentSystem system);
+        void SetComponent(Component component);
 
-        void SetEntity(IEntity entity);
+        void SetEntity(Entity entity);
     }
 }

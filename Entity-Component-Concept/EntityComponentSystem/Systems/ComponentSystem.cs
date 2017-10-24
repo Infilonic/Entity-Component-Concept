@@ -9,8 +9,8 @@ namespace EntityComponentSystem.Systems
      * This inteface is used to assure correct usage of componentsystems
      */
 
-    public interface IComponentSystem : IObserver
+    public interface ComponentSystem : Observer
     {
-        void Update(IMessage message);
+        void Update(Message message);
     }
 }

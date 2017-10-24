@@ -4,7 +4,7 @@
      * Use this class as Base for all of your observers
      */
 
-    public abstract class BaseObserver : IObserver
+    public abstract class BaseObserver : Observer
     {
         protected BaseObserver() {
 

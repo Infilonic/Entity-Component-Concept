@@ -7,12 +7,12 @@ namespace EntityComponentSystem.Components
      * This inteface is used to assure correct usage of components
      */
 
-    public interface IComponent : IObservable
+    public interface Component : Observable
     {
-        void Subscribe(IComponentSystem system);
+        void Subscribe(ComponentSystem system);
 
-        void Unsubscribe(IComponentSystem system);
+        void Unsubscribe(ComponentSystem system);
 
-		bool ConstraintReached(IEntity constrainedEntity);
+		bool ConstraintReached(Entity constrainedEntity);
     }
 }

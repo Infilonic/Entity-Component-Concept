@@ -4,7 +4,7 @@
      * This inteface is used to assure correct usage of observers
      */
 
-    public interface IObserver
+    public interface Observer
     {
         void Update();
     }

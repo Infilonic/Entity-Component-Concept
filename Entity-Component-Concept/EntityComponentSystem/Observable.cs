@@ -4,11 +4,11 @@
      * This inteface is used to assure correct usage of observables
      */
 
-    public interface IObservable
+    public interface Observable
     {
-        void Attach(IObserver observer);
+        void Attach(Observer observer);
 
-        void Detach(IObserver observer);
+        void Detach(Observer observer);
 
         void Notify();
     }

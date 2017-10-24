@@ -9,10 +9,10 @@ namespace EntityComponentSystem.MessageChannels
      * This inteface is used to assure correct usage of messagechannels
      */
 
-    public interface IMessageChannel : IObservable
+    public interface MessageChannel : Observable
     {
-        void Subscribe(IComponentSystem system);
-        void Unsubscribe(IComponentSystem system);
-        void SendMessage(IComponentSystem system, IMessage message);
+        void Subscribe(ComponentSystem system);
+        void Unsubscribe(ComponentSystem system);
+        void SendMessage(ComponentSystem system, Message message);
     }
 }
