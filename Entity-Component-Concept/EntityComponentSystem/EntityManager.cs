@@ -18,11 +18,11 @@ namespace EntityComponentSystem.Base
             this.index = 0;
         }
 
-        public static EntityManager GetInstance()
+        public static EntityManager GetManager()
         {
             if (EntityManager.instance == null)
             {
-                return new EntityManager();
+                EntityManager.instance = new EntityManager();
             }
 
             return EntityManager.instance;
